@@ -10,11 +10,11 @@ export default class Pathfinder extends React.Component {
       isEnd: false,
     };
   }
-  setIsStart = () => {
-    this.setState({ isStart: true });
+  setIsStart = (val) => {
+    this.setState({ isStart: val });
   };
-  setIsEnd = () => {
-    this.setState({ isEnd: true });
+  setIsEnd = (val) => {
+    this.setState({ isEnd: val });
   };
   getGrid = () => {
     const ROW_SIZE = 5;
@@ -43,6 +43,7 @@ export default class Pathfinder extends React.Component {
       document.getElementById(event.target.id).style.backgroundColor = "green";
       document.getElementById(event.target.id).className = "cell start";
     }
+
     if (this.state.isEnd) {
       if (document.getElementsByClassName("end").length > 0) {
         document.getElementsByClassName("end")[0].style.backgroundColor =
@@ -56,10 +57,22 @@ export default class Pathfinder extends React.Component {
   render() {
     return (
       <div className="App">
-        <button className="start-gen" onClick={() => this.setIsStart(true)}>
+        <button
+          className="start-gen"
+          onClick={() => {
+            this.setIsStart(true);
+            this.setIsEnd(false);
+          }}
+        >
           Start Position
         </button>
-        <button className="end-gen" onClick={() => this.setIsEnd(true)}>
+        <button
+          className="end-gen"
+          onClick={() => {
+            this.setIsEnd(true);
+            this.setIsStart(false);
+          }}
+        >
           End Position
         </button>
         <div className="matrix">
