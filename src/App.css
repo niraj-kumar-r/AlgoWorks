@@ -1,0 +1,9 @@
+.cell {
+  border: 1px solid black;
+}
+
+.matrix {
+  display: grid;
+  grid-template-column: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
