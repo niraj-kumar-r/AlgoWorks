@@ -1,11 +1,11 @@
 import React from "react";
 
-export default class Algorithms{
-    bfs  (array, startNode, endNode) {
+export default class Algorithms {
+    bfs(array, startNode, endNode) {
         let queue = [];
         let visited = {};
         let distance = [];
 
-        queue.push({startNode[0], startNode[1]});
+        queue.push({ row: startNode[0], col: startNode[1] });
     }
 }
